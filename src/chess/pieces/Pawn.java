@@ -39,13 +39,15 @@ public class Pawn extends ChessPiece {
 				mat[p.getRow()][p.getColumn()] = true;
 			}
 			// #Specialmove en passant white
-			if(position.getRow() == 3) {
-				Position left = new Position(position.getRow(),position.getColumn() - 1);
-				if(getBoard().positionExists(left) && isThereOpponentPiece(left) && getBoard().piece(left) == chessMatch.getEnPassantVulnerable()){
+			if (position.getRow() == 3) {
+				Position left = new Position(position.getRow(), position.getColumn() - 1);
+				if (getBoard().positionExists(left) && isThereOpponentPiece(left)
+						&& getBoard().piece(left) == chessMatch.getEnPassantVulnerable()) {
 					mat[left.getRow() - 1][left.getColumn()] = true;
 				}
-				Position rigth = new Position(position.getRow(),position.getColumn() + 1);
-				if(getBoard().positionExists(rigth) && isThereOpponentPiece(rigth) && getBoard().piece(rigth) == chessMatch.getEnPassantVulnerable()){
+				Position rigth = new Position(position.getRow(), position.getColumn() + 1);
+				if (getBoard().positionExists(rigth) && isThereOpponentPiece(rigth)
+						&& getBoard().piece(rigth) == chessMatch.getEnPassantVulnerable()) {
 					mat[rigth.getRow() - 1][rigth.getColumn()] = true;
 				}
 			}
@@ -69,13 +71,15 @@ public class Pawn extends ChessPiece {
 				mat[p.getRow()][p.getColumn()] = true;
 			}
 			// #Specialmove en passant Black
-			if(position.getRow() == 4) {
-				Position left = new Position(position.getRow(),position.getColumn() - 1);
-				if(getBoard().positionExists(left) && isThereOpponentPiece(left) && getBoard().piece(left) == chessMatch.getEnPassantVulnerable()){
+			if (position.getRow() == 4) {
+				Position left = new Position(position.getRow(), position.getColumn() - 1);
+				if (getBoard().positionExists(left) && isThereOpponentPiece(left)
+						&& getBoard().piece(left) == chessMatch.getEnPassantVulnerable()) {
 					mat[left.getRow() + 1][left.getColumn()] = true;
 				}
-				Position rigth = new Position(position.getRow(),position.getColumn() + 1);
-				if(getBoard().positionExists(rigth) && isThereOpponentPiece(rigth) && getBoard().piece(rigth) == chessMatch.getEnPassantVulnerable()){
+				Position rigth = new Position(position.getRow(), position.getColumn() + 1);
+				if (getBoard().positionExists(rigth) && isThereOpponentPiece(rigth)
+						&& getBoard().piece(rigth) == chessMatch.getEnPassantVulnerable()) {
 					mat[rigth.getRow() + 1][rigth.getColumn()] = true;
 				}
 			}
